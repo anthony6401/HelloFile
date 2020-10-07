@@ -1,8 +1,8 @@
 package seedu.address.testutil;
 
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_COMMAND;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_FILE_PATH;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_OLD_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
 import seedu.address.logic.commands.AddCommand;
@@ -25,9 +25,9 @@ public class PersonUtil {
      */
     public static String getPersonDetails(Person person) {
         StringBuilder sb = new StringBuilder();
-        sb.append(PREFIX_NAME + person.getName().fullName + " ");
-        sb.append(PREFIX_PHONE + person.getPhone().value + " ");
-        sb.append(PREFIX_ADDRESS + person.getAddress().value + " ");
+        sb.append(PREFIX_FILE_PATH + person.getName().fullName + " ");
+        sb.append(PREFIX_OLD_TAG + person.getPhone().value + " ");
+        sb.append(PREFIX_COMMAND + person.getAddress().value + " ");
         person.getTags().stream().forEach(
             s -> sb.append(PREFIX_TAG + s.tagName + " ")
         );
